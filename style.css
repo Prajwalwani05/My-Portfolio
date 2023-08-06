@@ -1,0 +1,214 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+      box-sizing: border-box;
+  }
+*{
+    border: none;
+    margin: 0;
+    padding: 0;
+    letter-spacing:.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+    list-style: none;
+}
+menu,
+ol,
+ul {
+    padding-left: 0;
+}
+article ol,
+article ul {
+    list-style-position: inside;
+}
+a {
+    text-underline-position: under;
+    text-decoration-thickness: 8;
+}
+@media (prefers-reduced-motion: no-preference) {
+    html {
+          scroll-behavior: smooth;
+    }
+  }
+html {
+    font-size: 62.5%; /* (62.5/100) * 16px = 10px */
+    -webkit-text-size-adjust: none; /* for iOS Safari */
+    text-size-adjust: none; /* for other mobile browsers */
+  }
+:focus:not(:focus-visible) {
+    outline: none;
+}
+label,
+button,
+select,
+summary,
+[type=radio],
+[type=submit],
+[type=checkbox] {
+    cursor: pointer;
+}
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:3rem;
+    font-weight:600;
+    background-color: #fff;
+    /* background-color: aqua; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.823);
+}
+.logo a{
+    font-size: 1.8rem;
+    color: black;
+    text-decoration: none;
+}
+nav .navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+.navLinks a{
+    color: black;
+    text-decoration: none;
+    text-transform:capitalize;
+}
+.sec1{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87vh;
+    background-color: #F9F9F9;
+}
+.sec1 .container .firstDiv{
+    display: flex;
+    justify-content:center;
+    gap: 5rem;
+}
+.sec1 .container .firstDiv .textContent1{
+    position: relative;
+}
+.sec1 .container .firstDiv .textContent1 .heading1{
+    display: flex;    
+}
+
+.sec1 .container .firstDiv .textContent1 .heading1 h1{
+    font-size: 5rem;
+    /* width:20ch; */
+    width: 15ch;
+}
+.sec1 .container .firstDiv .textContent1 .heading1 span{
+    position: absolute;
+    top:8.5rem;
+    left: 29rem;
+}
+.sec1 .container .firstDiv .textContent1 p{
+    font-size: 1.8rem;
+    width: 50ch;
+    padding: 1.2rem 0rem;
+    opacity: .7;
+}
+.sec1 .container .firstDiv .socialLinks{
+    margin-top: 1rem;
+}
+.sec1 .container .firstDiv .socialLinks a{
+    color: black;
+    text-decoration: none;
+    font-size: 3rem; 
+}
+.sec1 .container .firstDiv .textContent1 .socialLinks a:hover{
+    color: #0A66C2;
+}
+.textContent1 .socialLinks .linkedin{
+    margin-right: .8rem;
+}
+.sec1 .container .secondDiv{
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+}
+.secondDiv .textContent2{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* align-items: center; */
+}
+.secondDiv .textContent2 h3{
+    font-size: 2rem;
+    font-weight: 500;
+    opacity: .9;
+}
+.secondDiv .textContent2 span{
+    font-size: 2rem;
+    opacity: .8;
+}
+.secondDiv .icons{
+    margin-left: 5rem;
+}
+.secondDiv .icons  ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.secondDiv .icons li{
+    border: 1px solid #FFFFFF;
+    padding: 1rem;
+    background-color:#FFFFFF;
+    border-radius: 50%;
+}
+.secondDiv .icons li img{
+    width: 30px;
+}
+
+.imgDiv {
+    margin-top: -2rem;
+    animation: morph 8s ease-in-out infinite;
+    background-image: url("https://i.postimg.cc/prdpmV03/Whats-App-Image-2023-08-06-at-23-29-50.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:350px;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    height: 35rem;
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 35rem;
+    filter: brightness(1.1);
+  }
+  
+  @keyframes morph {
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }
+  
+.sec2{
+    height: 100vh;
+    background-color: #fff;
+}
