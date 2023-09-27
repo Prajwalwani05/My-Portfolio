@@ -67,6 +67,12 @@ body::-webkit-scrollbar-thumb{
 body{
     position: relative;
 }
+:root{
+    --primary-color : 'black';
+    --secondary-color : "white";
+
+    --primary-background-color : 'white';
+}
 
 header{
     position: fixed;
@@ -76,9 +82,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:3rem;
+    padding:2.4rem 3rem;
     font-weight:600;
-    background-color: #fff;
+    background-color:var(--primary-background-color);
     /* background-color: aqua; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.823);
 }
@@ -178,22 +184,24 @@ nav .navLinks{
     font-size: 2rem;
     opacity: .8;
 }
-.secondDiv .icons{
+ .icons{
     margin-left: 5rem;
 }
-.secondDiv .icons  ul{
+ .icons  ul{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
 }
-.secondDiv .icons li{
+ .icons li{
     border: 1px solid #FFFFFF;
     padding: 1rem;
+    width: fit-content;
     background-color:#FFFFFF;
     border-radius: 50%;
+    list-style: none;
 }
-.secondDiv .icons li img{
+ .icons li img{
     width: 30px;
 }
 
@@ -203,7 +211,7 @@ nav .navLinks{
     background-image: url("./images/WhatsApp\ Image\ 2023-08-06\ at\ 23.29.50.jpg");
     background-position:center;
     background-repeat: no-repeat;
-    background-size:350px;
+    background-size:330px;
     border: 3px solid #2d2e32;
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     height: 35rem;
@@ -244,14 +252,14 @@ nav .navLinks{
     border-radius: 50%;
     bottom: -50px;
     height: 17rem;
-    right: -40px;
+    right: -58px;
     width: 17rem;
     }
     & .aboutImage span img{
         animation: rotate 9s linear infinite;
         width: 16rem;
         position: absolute;
-        top: -89px;
+        top: -84px;
         left: 4px;
    
     }
@@ -332,12 +340,57 @@ nav .navLinks{
         }
     }
     & .card{
-        /* background-color: #147efb; */
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+        background-color:rgb(240, 246, 249);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
         height: 40rem;
         width: 110rem;
         border-radius: 20px;
         margin: 2rem 0 5rem 10rem;
+        display: flex;
+        
+        & .projectImage {
+            height: 40rem;
+            width: 60rem;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        & .projectImage img{
+            width: 55rem;
+            height: 35rem;
+            text-align: center;
+        }
+        & .projectContent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50rem;
+            gap: 2rem;
+            justify-content: center;
+            /* padding: 3rem; */
+            & h1{
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 900;
+            }
+            & .icons{
+                margin: 0;
+            }
+            & p{
+                font-weight: 600;
+                font-size: 1.8rem;
+                width:30ch;
+                text-align: center;
+                opacity: .8;
+            }
+            & .live a{
+                text-decoration: none;
+                color: black;
+                font-weight: 700;
+                font-size: 1.8rem;
+                margin-right: 2rem;
+            }
+        }
     }
 }
 .sec4{
