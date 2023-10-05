@@ -9,38 +9,10 @@ let two = document.getElementById('two');
 let three = document.getElementById('three');
 let four = document.getElementById('four');
 
-window.addEventListener('load', ()=>{
-    window.scrollTo(0 , home);
-});
+// window.addEventListener('load', ()=>{
+//     window.scrollTo(0 , home);
+// });
 
-
-const header = document.querySelector('header');
-
-function updateHeaderBackgroundColor() {
-    const scrollStart1 = 150;
-    const scrollEnd1 = 700; 
-    const scrollStart2 = 800;
-    const scrollEnd2 = 1300;
-    const scrollStart3 = 1600;
-    const scrollEnd3 = 2500;
-    if ( (window.scrollY >= scrollStart1 && window.scrollY <= scrollEnd1) ) {
-        header.style.backgroundColor = '#000814';
-    }
-    else if((window.scrollY >= scrollStart2 && window.scrollY <= scrollEnd2)){
-        header.style.backgroundColor = '#000814'; // Change to your desired color
-    }
-    else if((window.scrollY >= scrollStart3 && window.scrollY <= scrollEnd3)){
-        header.style.backgroundColor = '#000814'; // Change to your desired color
-    }
-
-     else {
-        header.style.backgroundColor = 'transparent'; // Reset to transparent when not scrolled 100vh
-    }
-}
-
-window.addEventListener('scroll', updateHeaderBackgroundColor);
-
-updateHeaderBackgroundColor();
 
 let resume = 'https://drive.google.com/file/d/1zj7O-FfeY5f5xpncMJ92h2EN_gtpoCVl/view?usp=drive_link';
 
@@ -50,45 +22,100 @@ document.getElementById("resumeBtn").addEventListener('click' , ()=>{
 
 
 
-var tl = gsap.timeline();
+// var tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 
-tl.from(".headerSec1 .logo , .navLinks li",{
-    y:-100,
+TweenMax.from(".headerSec1 .logo",{
+    x:-20,
     opacity:0,
-    duration:.5,
-    // delay:.2,
-    stagger:0.2,
+    ease:Expo.easeInOut,
 })
 
-tl.from(".textContent1 .heading1 , .textContent1 p , .textContent1 .socialLinks" , {
-    x:-200,
+TweenMax.staggerFrom("nav ul li" , 1,{
+    x:-20,
     opacity:0,
-    duration:.5,
-    stagger:0.2,
-})
-  tl.from(".imgDiv", {
-      x:100,
-      scale:1.5,
-      opacity: 0, // Start from opacity: 0
-      duration: .5, // Adjust the duration as needed
-      stagger: 0.5, // Adjust the stagger effect as needed
-    });
+    delay:.2,
+    ease:Power3.easeInOut,
+},0.08)
+ 
 
-    tl.from(".secondDiv ,.icons>ul>li",  {
+TweenMax.from(".textContent1 .heading1 , .textContent1 p , .textContent1 .socialLinks" ,1, {
+    y:20,
+    delay:1,
+    opacity:0,
+    ease:Expo.easeInOut,
+})
+    TweenMax.from(".secondDiv ,.icons>ul>li", 1, {
         y:20,
         opacity:0,
-        duration:.5,
-        stagger:0.1
+        delay:1.6,
+        ease:Expo.easeInOut,
     })
-    tl.from(".sec2 .aboutImage , .sec2 .aboutContent", {
-        scale:.5,
-        opacity:0,
-        duration:.7,
+
+  TweenMax.from(".imgDiv",2, {
+      y:-800,
+      opacity: 0,
+      delay: .5, 
+    });
+
+    // gsap.utils.toArray('.section').forEach(section =>{
+    //     ScrollTrigger.create({
+    //         trigger: section,
+    //         start: 'top top',
+    //         end: 'bottom top',
+    //         pin: true,
+    //         pinSpacing: true,
+    //     });
+    // });
+    gsap.utils.toArray('.section').forEach(section => {
+        const trigger = section;
+        const endTrigger = section.nextElementSibling || null; // Assumes the next sibling is the end trigger
+        const end = 'bottom top';
+    
+        ScrollTrigger.create({
+            trigger: trigger,
+            start: 'top top',
+            endTrigger: endTrigger,
+            end: end,
+            pin: true,
+            pinSpacing: false,
+        });
+    });
+
+/*
+//     tl.from(".sec2 .aboutImage , .sec2 .aboutContent", {
+//         scale:.5,
+//         opacity:0,
+//         duration:.7,
         
-        scrollTrigger:{
-            trigger:".sec2 .aboutImage",
-            scroller:"body",
-            start:"top 60%",
-        }
-    })
-  
+//         scrollTrigger:{
+//             trigger:".sec2 .aboutImage",
+//             scroller:"body",
+//             start:"top 60%",
+//         }
+//     })
+//   tl.from(".sec3 .projectHeading" ,{
+//     y:-100,
+//     opacity:0,
+//     duration:.5,
+//     delay:.7,
+//     stagger:0.1,
+//     ease:"back",
+//     scrollTrigger:{
+//             trigger:".sec3 .projectHeading h1",
+//             scroller:"body",
+//         }
+//   })
+
+// tl.from(".sec3 .card",{
+//      y:-100,
+//     opacity:0,
+//     duration:1,
+//     stagger:0.1,
+//     ease:"back",
+//     scrollTrigger:{
+//             trigger:".sec3 .projectHeading h1",
+//             scroller:"body",
+//         }
+// })
+*/
