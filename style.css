@@ -142,7 +142,7 @@ nav .navLinks{
     font-size: 5rem;
     font-weight: 700;
     width: 15ch;
-    color: #000000;
+    color: #fdf0d5;
 }
 .sec1 .container .firstDiv .textContent1 .heading1 span{
     position: absolute;
@@ -187,18 +187,18 @@ nav .navLinks{
     width: 50ch;
     font-weight: 500;
     padding: 2rem 0rem;
-    color: #000000;
+    color: #fdf0d5;
 }
 .sec1 .container .firstDiv .socialLinks{
     margin-top: 2rem;
 }
 .sec1 .container .firstDiv .socialLinks a{
-    color:  #000000;
+    color:  #fdf0d5;
     text-decoration: none;
     font-size: 3rem; 
 }
 .sec1 .container .firstDiv .textContent1 .socialLinks a:hover{
-    color: #ffffff;
+    color: #6ce1ba;
 }
 .textContent1 .socialLinks .linkedin{
     margin-right: .8rem;
@@ -215,12 +215,14 @@ nav .navLinks{
 }
 .secondDiv .textContent2 h3{
     font-size: 2rem;
+    color: #fdf0d5;
     font-weight: 500;
     opacity: .9;
 }
 .secondDiv .textContent2 span{
     font-size: 2rem;
     opacity: .8;
+    color: #fdf0d5;
 }
  .icons{
     margin-left: 5rem;
@@ -251,25 +253,35 @@ nav .navLinks{
     width: 100%;
     height: 100%;
 }
-  .imgDiv img{
-    filter: drop-shadow(0 0 0.75rem #00000079)
-    contrast(1.3) ;
-    animation: myAnim 3s ease 0s 100000 normal forwards;
-
-  }
-  @keyframes myAnim {
-	0% {
-		transform: scale(1);
-	}
-
-	50% {
-		transform: scale(1.1);
-	}
-
-	100% {
-		transform: scale(1);
-	}
+.imgDiv{
+    animation: morph 8s ease-in-out infinite;
+    background-image: url(./images/praj.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: 53rem;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    height: 35rem;
+    filter: brightness(1.1) drop-shadow(0 0 0.75rem #00000079);
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 33rem;
 }
+.imgDiv::before {
+    content: "";
+    background-color: rgba(255, 0, 0, 0.525); /* You can change this to any color you want */
+    opacity: 0.5; /* Adjust the opacity as needed */
+    position: absolute;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    transition: all 1s ease-in-out;
+    animation: morph 8s ease-in-out infinite;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1; /* Ensure the overlay is above the image */
+}
+
   @keyframes morph {
     0% {
       border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
@@ -297,10 +309,10 @@ nav .navLinks{
         margin: 2rem 0;
         font-size: 1.5rem;
         border-radius: 90px;
-        border: 2px solid #1a2311;
+        border: 2px solid #fff100;
         background: transparent;
         font-weight: 500;
-        color: #1a2311;
+        color: #ffff00;
         display: flex;
         align-items: center;
         gap: .5rem;
@@ -317,7 +329,7 @@ nav .navLinks{
     }
     & .aboutImage span{
     position:absolute;
-    background-color:#749f58;
+    background-color:#6B994D;
     border-radius: 50%;
     bottom: -50px;
     height: 17rem;
@@ -341,10 +353,13 @@ nav .navLinks{
     }
     & img{
       width: 43rem;
-      height: 38em;
-      border-radius:20%;
+      height: 38rem;
+      border-radius:25%;
+      /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
     }
-
+    .mainImg{
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
     .aboutContent {
         padding: 1rem;
 
@@ -352,26 +367,28 @@ nav .navLinks{
             font-size: 2rem;
             font-weight: 900;
             opacity: .9;
-            color: #283618;
+            color: #ffff00;
         }
         & .aboutH3{
             display: flex;
             width: 100%;
             padding: 1rem 0;
-            color: #18200f;
+            color: #fff100;
             
         }
         & h3{
             font-size: 2.5rem;
-            font-weight: 700;
+            font-weight: 500;
             width: 30ch; 
             opacity: .9;
+            color: #feee00;
         }
         & p{
             font-size: 1.5rem;
             width: 50ch;
-            font-weight: 500;
-            opacity: .6;
+            font-weight: 400;
+            opacity: .8;
+            color: #feee00;
         }
     }
 }
@@ -469,7 +486,7 @@ nav .navLinks{
                     gap: 1.5rem;
                 }
                 & li {
-                    
+                    border: none;
                     background-color: rgb(0, 0, 0);
                 }
                 & img{
@@ -505,9 +522,7 @@ nav .navLinks{
     flex-direction: column;
     gap: 5rem;
     height: 100vh;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1640' height='800' preserveAspectRatio='none' viewBox='0 0 1640 800'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1028%26quot%3b)' fill='none'%3e%3crect width='1640' height='800' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1029%26quot%3b)'%3e%3c/rect%3e%3cpath d='M410.65 862.83C622.27 851.97 742.77 499.88 1165.93 478.2 1589.09 456.52 1709.66 105.02 1921.21 94.2' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M478.69 843.06C618.52 826.97 701.17 518.31 937.41 516.65 1173.65 514.99 1166.77 616.65 1396.13 616.65 1625.49 616.65 1737.48 517.23 1854.85 516.65' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M948.73 805.94C1097.7 655.15 999.34 21.59 1244.22 11.23 1489.1 0.87 1660.77 371.74 1835.2 387.23' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M692.17 835.14C904.18 742.6 933.6 85.71 1221.51 76.21 1509.43 66.71 1598.62 369.65 1750.86 380.21' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M166.82 811.32C406.3 787.87 564.87 279.63 968.89 279.27 1372.91 278.91 1553.66 608.57 1770.96 615.27' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1028'%3e%3crect width='1640' height='800' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='12.8%25' y1='-26.25%25' x2='87.2%25' y2='126.25%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1029'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 24%2c 69%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-    /* background-color: #001845; */
-    scroll-snap-align: start;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1640' height='800' preserveAspectRatio='none' viewBox='0 0 1640 800'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1218%26quot%3b)' fill='none'%3e%3crect width='1640' height='800' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1219%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-73.09 515.22C156.1 507.8 437.61 149.94 770.57 155.22 1103.53 160.5 1005.4 813.63 1192.4 930.93' stroke='rgba(194%2c 115%2c 51%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-78.46 640.77C106.71 639.11 358.05 445.83 636.93 448.77 915.8 451.71 853.26 887 994.62 945.73' stroke='rgba(194%2c 115%2c 51%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-311.4 702.44C-179.65 702.9-52.69 802.44 206.02 802.44 464.74 802.44 462.04 702.05 723.45 702.44 984.85 702.83 1097.37 945.8 1240.87 952.22' stroke='rgba(194%2c 115%2c 51%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-40.89 138.16C181.49 141.78 435.36 389.77 803.53 418.16 1171.7 446.55 1072.55 852.54 1225.74 897.95' stroke='rgba(194%2c 115%2c 51%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M-262.03 415.92C-90.41 409.66 36.78 131.44 365.24 135.92 693.69 140.4 770.62 747.67 992.5 806.58' stroke='rgba(194%2c 115%2c 51%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1218'%3e%3crect width='1640' height='800' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='100%25' y1='50%25' x2='0%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1219'%3e%3cstop stop-color='rgba(14%2c 42%2c 71%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(67%2c 40%2c 24%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");    scroll-snap-align: start;
     .contactImg img{
         width: 40rem;
         position: absolute;
@@ -605,7 +620,7 @@ nav .navLinks{
                 width: 10rem;
             }
             .imgDiv{
-                margin-left: 6rem;
+                /* margin-left: 6rem; */
                 width: 36rem;
                 display: flex;
                 justify-content: center;
@@ -749,6 +764,7 @@ nav .navLinks{
     } 
     .sec1{
         display: flex;
+        height: 100vh;
         /* justify-content: start; */
         padding: 1rem;
         padding-top: 15rem;
@@ -771,7 +787,7 @@ nav .navLinks{
                 width: 10rem;
             }
             .imgDiv{
-                margin-left: 6rem;
+                /* margin-left: 6rem; */
                 width: 36rem;
                 display: flex;
                 justify-content: center;
@@ -801,7 +817,7 @@ nav .navLinks{
         align-items:center;
         padding: 10rem;
         margin: 0;
-        height: 100%;
+        height: 100vh;
         justify-content: center;
         gap:5rem;
          & img{
@@ -839,7 +855,7 @@ nav .navLinks{
     
      .sec3{
         padding: 5rem 0;
- 
+        height: 100vh;
         .projectHeading{
          text-align: center;
         }
@@ -916,7 +932,7 @@ nav .navLinks{
     .sec1{
         display: flex;
         padding:5rem 1rem;
-        height: 92vh;
+        height: 100vh;
         justify-content: center;
         align-items: flex-end; 
         .container{
@@ -961,7 +977,7 @@ nav .navLinks{
         align-items:center;
         padding: 10rem;
         margin: 0;
-        height:100%;
+        height:100vh;
         justify-content: center;
         gap:5rem;
          & img{
@@ -997,7 +1013,7 @@ nav .navLinks{
          }
     }
     .sec3{
-        height: 100%;
+        height: 100vh;
         padding: 0;
         .projectHeading{
             text-align: center;
@@ -1030,7 +1046,7 @@ nav .navLinks{
      .sec4{
         display: flex;
         flex-direction: column;
-        height: 80vh;
+        height: 100vh;
         .imgUpper{
             display: flex;
             justify-content: center;
@@ -1113,7 +1129,7 @@ nav .navLinks{
        }
     }
     .sec2{
-       
+        height: 100vh;
         & .aboutImage span{
             position:absolute;
             background-color:#ffffff;
@@ -1140,7 +1156,7 @@ nav .navLinks{
             } 
     }
     .sec3{
-        height: 100%;
+        height: 100vh;
         padding: 0;
         .projectHeading{
             text-align: center;}
@@ -1173,7 +1189,7 @@ nav .navLinks{
      .sec4{
         display: flex;
         flex-direction: column;
-        height: 80vh;
+        height: 100vh;
         .imgUpper{
             display: flex;
             justify-content: center;
