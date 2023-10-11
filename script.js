@@ -14,7 +14,7 @@ window.addEventListener('load', ()=>{
 });
 
 
-let resume = 'https://drive.google.com/file/d/1FDFec0Tve-xSy8jRY8fwpRyu48DHc92O/view?usp=sharing';
+let resume = 'https://drive.google.com/file/d/1jWAmQWbOeWITB1ju9RYm1erK0NhesVeH/view?usp=sharing';
 
 document.getElementById("resumeBtn").addEventListener('click' , ()=>{
     window.open(resume)
